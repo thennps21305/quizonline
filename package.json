@@ -1,0 +1,15 @@
+{
+  "name": "assgm3",
+  "version": "1.0.0",
+  "main": "Subject.js",
+  "scripts": {
+    "json:server": "--watch db/Students.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}

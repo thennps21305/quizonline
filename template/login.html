@@ -1,0 +1,71 @@
+<style>
+    body {
+        background-image: url('/images/bg2.jpg');
+        background-size: cover;
+    }
+</style>
+<section style="margin-top: 5rem;">
+    <!-- <div class="col-lg-5 m-auto rounded-lg" id="signin">
+        <div class="card card-cascade narrower bg-transparent">
+            <div class="form-title">Sign in</div>
+            <div class="card-body card-body-cascade px-5 py-3">
+               
+                <div id="gif">
+                    <a href="https://dribbble.com/shots/2197140-New-Material-Text-Fields">
+                        <img src="https://d13yacurqjgara.cloudfront.net/users/472930/screenshots/2197140/efsdfsdae.gif"
+                            alt="">
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div> -->
+    <div id="clouds">
+        <div class="cloud x1"></div>
+        <!-- Time for multiple clouds to dance around -->
+        <div class="cloud x2"></div>
+        <div class="cloud x3"></div>
+        <div class="cloud x4"></div>
+        <div class="cloud x5"></div>
+    </div>
+
+    <div class="container justify-content-center bg-transparent shadow-lg rounded-lg m-auto" style="width: 50%;">
+        <div class="row">
+            <div class="col-lg-12">
+                <img src="/images/login_bg.png" alt="" class="img-fluid d-block mx-auto w-25 h-70">
+            </div>
+        </div>
+        <form name="frmLogin" id="frmLogin">
+            <div class="input-field">
+                <i class="fas fa-user prefix text-primary"></i>
+                <label for="username" class="text-primary text-capitalize">Email</label>
+                <input name="username" ng-model="username" type="text" id="username" class="form-control border-primary"
+                    required maxlength="25">
+                <small ng-show="frmLogin.username.$invalid" id="username" class="form-text text-danger">Vui lòng
+                    nhập tài khoản</small>
+            </div>
+
+            <div class="input-field">
+                <i class="fas fa-lock prefix text-primary text-capitalize"></i>
+                <label for="password" class="text-primary">Password</label>
+                <input name="password" ng-model="password" type="password" id="password"
+                    class="form-control border-primary" required maxlength="25">
+                <i class="material-icons"></i>
+
+                <small ng-show="frmLogin.password.$invalid" id="password" class="form-text text-danger">Vui lòng
+                    nhập mật khẩu</small>
+            </div>
+            <div class="text-center mt-4">
+                <button ng-click='Login()' ng-disabled="frmLogin.$invalid"
+                    class="btn peach-gradient btn-rounded login">Đăng nhập</button>
+                    <small>
+                        <a href="#!forgotpassword" style="text-decoration: none;">Quên mật khẩu ?</a>
+                    </small>
+            </div>
+
+        </form>
+    </div>
+
+
+</section>

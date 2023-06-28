@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Online Developer</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <link rel="stylesheet" href="css/styleInput.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/login.css">
+    <!-- <link rel="stylesheet" href="css/quiz.css"> -->
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <script src="js/sweetalert2.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/angular-animate.js"></script>
+</head>
+
+<body class="fixed-sn white-skin" ng-app="myApp">
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg scrolling-navbar double-nav bg-primary">
+            <div class="float-left">
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars"></i></a>
+            </div>
+            <div class="breadcrumb-dn mr-auto text-danger" style="font-weight: 600; font-size: 2.5rem;">
+                <p><strong>NNTQuiz</strong></p>
+            </div>
+            <div class="nav-item">
+                <a ng-click="intro=1" href="#!index" class="nav-link text-white"><i
+                        class="w-fa fas fa-home"></i>&nbsp;Trang chủ</a>
+            </div>
+            <div class="nav-item ">
+                <a ng-click="intro=1" href="#!about" class="nav-link text-white"><i
+                        class="w-fa fas fa-credit-card"></i>&nbsp;Giới thiệu</a>
+            </div>
+            <div class="nav-item ">
+                <a ng-click="intro=1" href="#!contact" class="nav-link text-white"><i
+                        class="w-fa fas fa-phone-square-alt"></i>&nbsp;Liên hệ</a>
+            </div>
+            <div class="nav-item ">
+                <a ng-click="intro=1" href="#!feedback" class="nav-link text-white"><i
+                        class="w-fa fas fa-comments"></i>&nbsp;Góp ý</a>
+            </div>
+            <div class="nav-item ">
+                <a ng-click="intro=1" href="#!qa" class="nav-link text-white"><i
+                        class="w-fa fas fa-question"></i>&nbsp;Hỏi Đáp</a>
+            </div>
+            <div class="nav-item ">
+                <a ng-click="intro=1" href="#!quiz" class="nav-link text-white"><i
+                        class="w-fa fas fa-question-circle"></i>&nbsp;Làm bài thi</a>
+            </div>
+            <div class="nav-item dropdown">
+                <div class="dropdown nav-link">
+                    <a class="dropdown-toggle text-white" data-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user text-white"></i> <span
+                            class="text-white">{{(student==null)?'More':student.fullname}}</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right bg-light">
+                        <div ng-show="student==null">
+                            <a ng-click="intro=0" class="dropdown-item" href="#!register">Đăng kí</a>
+                            <a ng-click="intro=0" class="dropdown-item" href="#!login">Đăng nhập</a>
+                            <a ng-click="intro=0" class="dropdown-item" href="#!forgotpassword">Quên mật khẩu</a>
+                        </div>
+                        <div ng-hide="student==null">
+                            <img src="/images/userImage/{{student.image}}" alt=""
+                                class="img-thumbnail img-fluid d-block">
+                            <div class="dropdown-divider">
+
+                            </div>
+                            <a ng-click="intro=1" class="dropdown-item text-primary" href="#!updateaccount">&nbsp;<i
+                                    class="fas fa-user-astronaut"></i>Thông tin cá nhân</a>
+                            <a ng-click="intro=1" class="dropdown-item text-primary"
+                                href="#!changepassword">&nbsp;&nbsp;<i class="fas fa-info"></i>&nbsp;Đổi mật khẩu</a>
+                            <a ng-click="intro=1;logoff()" class="dropdown-item text-primary" href="">&nbsp;<i
+                                    class="fas fa-sign-out-alt"></i>Đăng xuất</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+    <div class="container-full justify-content-center" style="padding: 7rem;">
+        <div ng-view></div>
+    </div>
+
+    <footer class="page-footer text-center text-md-left unique-color-dark pt-0 mt-5 border-top">
+        <div class="fb-like mb-2">
+            <div class="fb-like fb_iframe_widget fb_iframe_widget_fluid"
+                data-href="https://www.facebook.com/thaidinhgroup" data-width="" data-layout="button_count"
+                data-action="like" data-size="small" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=170677886335455&amp;container_width=1145&amp;
+                        href=https%3A%2F%2Ffacebook.com%2Fstudy4.official&amp;layout=button_count&amp;locale=vi_VN&amp;
+                        sdk=joey&amp;share=true&amp;size=small&amp;width="><span
+                    style="vertical-align: bottom; width: 150px; height: 28px;">
+                    <iframe
+                        src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fthaidinhgroup&width=250&layout=button_count&action=like&size=large&share=true&height=46&appId"
+                        width="250" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                        allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-md grow0">
+                <a href="/"><img class="mb-2" src="images/ENGLISH2.png" alt="" height="30"></a>
+                <small class="d-block mb-2" style="color: red;">© 2021</small>
+                <div class="site-socials">
+                    <a target="_blank" href="https://facebook.com/study4.official"><span>
+                            <i class="w-fa fa-facebook-f text-white"></i></span></a>
+                    <a target="_blank" href="https://instagram.com/study4.official"><span><i
+                                class="w-fa fa-instagram text-white" aria-hidden="false"></i></span></a>
+                    <a target="_blank" href="https://twitter.com/study4Official"><span><i
+                                class="fa fa-twitter text-white" aria-hidden="false"></i></span></a>
+                    <a target="_blank" href="https://www.linkedin.com/company/study4"><span><i
+                                class="fa fa-linkedin-square text-white" aria-hidden="false"></i></span></a>
+                    <a target="_blank" href="https://www.tiktok.com/@study4.official "><span><i
+                                class="fa fa-youtube-play text-white" aria-hidden="false"></i></span></a>
+                </div>
+            </div>
+            <div class="col-6 col-md">
+                <div class="footer-title">Khoá học online</div>
+                <ul class="list-unstyled text-small">
+
+                    <li><a href="/courses/26/ielts-fundamentals/">Lập trình JAVA</a></li>
+
+                    <li><a href="/courses/15/ielts-intensive-listening/">Lập trình HTML</a></li>
+
+                    <li><a href="/courses/22/ielts-intensive-vocabulary-reading/">Microsoft SQL Sever</a></li>
+
+                    <li><a href="/courses/27/ielts-intensive-speaking/">Lập trình Java Swing</a></li>
+
+                    <li><a href="/courses/25/ielts-intensive-writing/">Spring boost- MVC</a></li>
+
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <div class="footer-title">Tài nguyên</div>
+                <ul class="list-unstyled text-small">
+                    <li><a href="/courses/schedules/">Lịch khai giảng</a></li>
+                    <li><a href="/tests/">Thư viện đề thi</a></li>
+                    <li><a href="/posts/">Cộng đồng</a></li>
+                    <li><a href="/materials/">Kho tài liệu</a></li>
+                    <li><a href="/liveclass/">Live class</a></li>
+                    <li><a href="/spaces/">Study spaces</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <div class="footer-title">Hỗ trợ</div>
+                <ul class="list-unstyled text-small">
+                    <li><a href="/user-guide/">Hướng dẫn sử dụng</a></li>
+                    <li><a href="/buying-guide/">Hướng dẫn mua hàng</a></li>
+                    <li><a href="/customer-support/">Chăm sóc khách hàng</a></li>
+                    <li><a href="/feedback/">Phản hồi khiếu nại</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <div class="footer-title">ONLINE DEVELOPER</div>
+                <ul class="list-unstyled text-small">
+                    <li><a href="/about/">Về chúng tôi</a></li>
+                    <li><a href="/contact/">Liên hệ</a></li>
+                    <li><a href="/privacy/">Điều khoản bảo mật</a></li>
+                    <li><a href="/terms/">Điều khoản sử dụng</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-addresses offset-1">
+            <h5>Địa chỉ</h5>
+            <ul style="list-style-type: none;">
+                <li>Trụ sở chính: Công Viên Phần Mềm Quang Trung, Hồ Chí Minh</li>
+
+                <li>CS1: </li>
+
+                <li>CS2: </li>
+
+            </ul>
+        </div>
+
+        <div class="footer-copyright text-center">
+            @ 2021 - Bản quyền của Công ty TNHH FPT Polytechnic. Giấy chứng nhận Đăng ký doanh nghiệp số: 0123456789,
+            cấp bởi Sở kế hoạch và đầu tư TP. Đà Nẵng
+        </div>
+    </footer>
+
+
+    <!-- SCRIPTS -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script src="js/app/myApp.js"></script>
+    <script src="js/app/loginCtrl.js"></script>
+    <script src="js/app/registerCtrl.js"></script>
+    <script src="js/app/updateaccountCtrl.js"></script>
+    <script src="js/app/forgotpasswordCtrl.js"></script>
+    <script src="js/app/changepasswordCtrl.js"></script>
+    <script src="js/app/viewtestCtrl.js"></script>
+    <script src="js/app/quizCtrl.js"></script>
+    <script src="js/app/indexCtrl.js"></script>
+    <script>
+        $(".button-collapse").sideNav();
+
+        var container = document.querySelector('.custom-scrollbar');
+        var ps = new PerfectScrollbar(container, {
+            wheelSpeed: 2,
+            wheelPropagation: true,
+            minScrollbarLength: 20
+        });
+        // Animation init
+        new WOW().init();
+    </script>
+</body>
+
+</html>

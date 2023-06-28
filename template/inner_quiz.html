@@ -1,0 +1,114 @@
+<style>
+    body {
+        background: url('/images/home-1-bg-gr-4.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: screen;
+    }
+</style>
+
+<div class="container-fluid shadow-lg bg-transparent">
+    <div class="container" style="margin-top: 10rem;">
+        <div class="row">
+            <div class="container justify-content-center">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <img src="/images/logos/{{subLogo}}" alt="" class="mx-auto d-block img-thumbnail rounded-pill"
+                            style="width: 4rem; height: 4rem; margin-top: 1rem;">
+                    </div>
+                    <div class="col-lg-12 text-uppercase text-center"
+                        style="padding-top: 1rem; font-family: sans-serif; font-size: 25px; color: rgb(19, 18, 18);">
+                        <span style="">{{subname}}</span>
+                    </div>
+                    <div class="col-lg-12 text-center" ng-show="!inProgress">
+                        <!--<button class="btn-primary"  min="20" data-action="start">
+                            Bắt Đầu Làm Bài
+                        </button>-->
+                        <div class="action">
+                            <div class="input">
+                                <input data-action="start"
+                                    class="btn btn-white btn-rounded orange-text font-weight-bold ml-lg-0 wow fadeInLeft"
+                                    type="button" value="Start" ng-click="start()" onclick="thoigian(600)">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container justify-content-center mt-4" ng-show="inProgress">
+        <label id="ok" ng-show="!quizOver">
+            <h2><i class="fas fa-clock" style="color: #23B5E1;"></i> <span id="sophut"></span> : <span id="sogiay"></span></h2>
+        </label>
+        <div class="card " ng-show="!quizOver">
+            <div id="clock_container">
+                
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-2 mb-md-0 mb-4">
+                    <img src="images/logos/ADAV.jpg" class="img-fluid rounded-circle z-depth-3 mt-5">
+                </div>
+                <div class="col-12 col-md-10">
+                    <h5 class="font-weight-bold light-blue-text mb-3">
+                        {{index+1}}&nbsp;<strong>{{question}}</strong>
+                    </h5>
+                    <form>
+                        <fieldset ng-repeat="o in options" class="form-check mb-2">
+                            <input class="form-check-input"  name="answer" type="radio" value="{{o.Id}}" id="{{o.Id}}">
+                            <label class="form-check-label" for="{{o.Id}}">{{o.Text}}</label>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="card-body" ng-show="!quizOver">
+            <div class="float-right mb-3" ng-show="statusAns">
+                <button class="btn btn-outline-info btn-rounded font-weight-bold wow fadeInLeft w-30 "
+                    ng-click="checkAnswer()">Đồng Ý</button>
+            </div>
+            <div class="float-right " ng-show="!statusAns">
+                <button class="btn btn-outline-danger btn-rounded font-weight-bold wow fadeInLeft w-30 "
+                    ng-click="nextQuestion()">Tiếp Theo</button>
+                <p>
+                    <small><span class="text-success text-center float-right" ng-show="correctAns">Chúc mừng bạn đã làm
+                            đúng !</span>
+                        <span class="text-danger text-center float-right" ng-show="!correctAns">Bạn đã làm sai
+                            !</span></small>
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-12 text-center" ng-show="quizOver">
+            <h3 class="text-danger">Quiz is over</h3>
+            <div class="action">
+                <div class="input">
+                    <input class="input-num" type="number" placeholder="Enter Minute" ng-show="false">
+                    <input data-action="start" class="input-btn btn-primary" type="button" value="Again" ng-click="start()" onclick="thoigian(600)">
+                </div>
+            </div>
+        </div>
+
+        <p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        </p>
+    </div>
+
+    <div class="container justify-content-center mt-5" ng-show="quizOver">
+        <div class="col-lg-12">
+            <img src="/images/verified_account_64px.png" class="d-block mx-auto" alt="">
+        </div>
+        <div class="col-lg-12 text-center">
+            <span style="font-size: 25px; font-family: sans-serif; font-weight: 200;">Điểm của bạn : {{mark}} / <span
+                    class="text-danger">10</span> </span>
+        </div>
+    </div>
+
+
+</div>
+

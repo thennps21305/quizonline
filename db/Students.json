@@ -1,0 +1,96 @@
+{
+  "listStudents": [
+    {
+      "username": "teonv",
+      "password": "123123",
+      "fullname": "Nguyễn Văn Tèo",
+      "email": "teonv@fpt.edu.vn",
+      "gender": "true",
+      "birthday": "1995-12-27",
+      "schoolfee": "15000000",
+      "marks": "0",
+      "image": "profile1.jpg",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "username": "pheonv",
+      "password": "1",
+      "fullname": "Nguyễn Văn Chí Phèo",
+      "email": "pheonv@fpt.edu.vn",
+      "gender": "true",
+      "birthday": "1985-10-11",
+      "schoolfee": "2500000",
+      "marks": "0",
+      "image": "profile1.jpg"
+    },
+    {
+      "id": 3,
+      "username": "nopt",
+      "password": "1",
+      "fullname": "Phạm Thị Nở",
+      "email": "nopt@fpt.edu.vn",
+      "gender": "false",
+      "birthday": "1993-05-15",
+      "schoolfee": "2000000",
+      "marks": "0",
+      "image": "profile2.jpg"
+    },
+    {
+      "username": "123123",
+      "password": "1",
+      "fullname": "1",
+      "email": "1",
+      "gender": "1",
+      "birthday": "1",
+      "schoolfee": "1",
+      "marks": "1",
+      "image": "1",
+      "id": 5
+    },
+    {
+      "id": 6,
+      "username": "0944940583",
+      "password": "120200",
+      "fullname": "Tran Huu Quan",
+      "email": "bimzc123@gmail.com",
+      "gender": "true",
+      "birthday": "2000-12-02",
+      "schoolfee": 2000000,
+      "image": "profile1.jpg"
+    },
+    {
+      "username": "popo123",
+      "password": "123456",
+      "fullname": "123456",
+      "email": "bimzc123@gmail.com",
+      "gender": "true",
+      "birthday": "2000-12-02",
+      "schoolfee": "15000000",
+      "image": "profile1.jpg",
+      "id": 7
+    },
+    {
+      "id": 8,
+      "username": "popo1111",
+      "password": "123456",
+      "fullname": "Tran Huu Quan",
+      "email": "bimzc123@gmail.com",
+      "gender": "true",
+      "birthday": "2000-12-02",
+      "schoolfee": 15000001,
+      "image": "profile1.jpg"
+    },
+    {
+      "id": 9,
+      "username": "popo123123",
+      "password": "123123",
+      "fullname": "Tran Huu Quan",
+      "email": "bimzc123@gmail.com",
+      "gender": "true",
+      "birthday": "2000-12-02",
+      "schoolfee": 15000006,
+      "image": "profile1.jpg"
+    }
+  ]
+}
